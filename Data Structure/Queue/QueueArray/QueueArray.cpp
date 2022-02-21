@@ -16,9 +16,9 @@ void initialize(dequeue* q){
 
 int isEmpty(dequeue* q){
     if(q->rear == -1){
-        return -1;                   // returns error
+        return -1;                   // returns true
     }
-    return 0;                        // int isEmpty to avoid mem allocation and exit after isEmpty
+    return 0;                        // returns false
 }
 
 int isFull(dequeue *q){
