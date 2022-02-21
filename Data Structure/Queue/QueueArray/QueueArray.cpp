@@ -44,38 +44,6 @@ void enqueueR(dequeue* q , char x){
     }
 }
 
-void enqueueF(dequeue* q , char x){
-    if(isFull(q)){
-        cout<<"Full"<<endl;
-        exit(100);
-    }
-    else if(isEmpty (q)){
-        q->front = 0;
-        q->rear = 0;
-        q->arr[0] = x ;
-    }
-    else{
-        q->front = (q->front - 1 + max) % max;
-        q->arr[q->front] = x;
-    }
-}
-
-char dequeueR(dequeue* q){
-    int temp = q->arr[q->rear];
-    if(isEmpty(q)){
-        cout<<"Empty"<<endl;
-        exit(100);
-    }
-    else if(q->rear == q->front){
-        initialize(q);
-    }
-    else{
-        q->rear = (q->rear - 1 + max) % max ;
-        
-    }
-    return temp;
-}
-
 char dequeueF(dequeue* q){
     int temp = q->arr[q->front];
     if(isEmpty(q)){
@@ -110,30 +78,20 @@ int main(){
 
     int x=0;
 
-    while(x != 6){
+    while(x != 4){
         cin>>x;
         if(x == 1){
             char item;
             cin>>item;
             enqueueR(&q,item);
             }
-        
-        else if(x == 2){
-            char itm;
-            cin>>itm;
-            enqueueF(&q,itm);
-            }        
-        else if(x == 3){
-            char temp = dequeueR(&q);
-            cout<<temp<<endl;
-            }
 
-        else if(x == 4){
+        else if(x == 2){
             char tmp = dequeueF(&q);
             cout<<tmp<<endl;
             }
 
-        else if(x == 5){
+        else if(x == 3){
             display(&q);
             }
 
