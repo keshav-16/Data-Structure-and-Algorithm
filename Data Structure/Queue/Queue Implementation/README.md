@@ -1,4 +1,4 @@
-# Circular Queue
+# Queue Implementation 
 
 Press 1 to push element from rear
 <br>

@@ -1,4 +1,4 @@
-# Queue-array
+# Circular Queue-array
 
 Insert from rear and delete fron the front 
 <br><br>
