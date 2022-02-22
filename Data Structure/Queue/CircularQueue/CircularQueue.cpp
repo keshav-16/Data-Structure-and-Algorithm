@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define max 100
+#define max 5
 
 typedef struct{
     char arr[max];
