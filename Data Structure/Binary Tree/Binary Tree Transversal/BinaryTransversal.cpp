@@ -55,5 +55,5 @@ int main(){
     cout<<endl;
     postorder(root);
     cout<<endl;
-    
+     return 0;
 }
