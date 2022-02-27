@@ -9,11 +9,12 @@ Left Left Case
 <br>
 
 T1, T2, T3 and T4 are subtrees.
-         z                                      y 
-        / \                                   /   \
-       y   T4      Right Rotate (z)          x      z
-      / \          - - - - - - - - ->      /  \    /  \ 
-     x   T3                               T1  T2  T3  T4
+<br>
+         z                                         y 
+        / \                                      /   \
+       y   T4        Right Rotate (z)          x      z
+      / \            - - - - - - - - ->      /  \    /  \ 
+     x   T3                                 T1  T2  T3  T4
     / \
   T1   T2
   <br><br>
