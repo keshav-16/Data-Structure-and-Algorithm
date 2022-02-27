@@ -29,6 +29,7 @@ void insert(node* root, int key){
         else{
             root = root->right;
         }
+       
     }
 
         node* next;
@@ -40,28 +41,27 @@ void insert(node* root, int key){
         else{
             prev->right = next;
         }
-
+         
 }
 
 node* minValNode(node* root){
     node* temp = root;
-    if(temp != NULL && temp->left != NULL){
-        temp = temp->left ;
-    }
-    else{
+   while (temp && temp->left != NULL){
+        temp = temp->left;
+   }
         return temp;
-    }
+
 }
 
-node* delete(node* root, int key){
+node* deleteNode(node* root, int key){
     if(root == NULL){
         return root;
     }
-    else if(key < root->key){
-        root->left = delete(root->left , key);
+    else if(key < root->data){
+        root->left = deleteNode(root->left , key);
     }
-    else if(key > root->key){
-        root->right = delete(root->right , key);
+    else if(key > root->data){
+        root->right = deleteNode(root->right , key);
     }
     else{
         if(root->left == NULL && root->right == NULL){
@@ -79,10 +79,12 @@ node* delete(node* root, int key){
         }
         else{
             node* temp = minValNode(root->right);
-            root->key = temp->key;
-            root->right = delete(root->right,temp->key);
+            root->data = temp->data;
+            root->right = deleteNode(root->right,temp->data);
+            
         }
     }
+    return root;
 }
 
 void inorder(node* root){
@@ -114,7 +116,7 @@ int main(){
         else if(k == 2){
             int d ;
             cin>>d ;
-            delete(root,d);
+            deleteNode(root,d);
         }
         else if(k == 3){
             inorder(root);
