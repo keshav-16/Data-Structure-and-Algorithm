@@ -10,7 +10,7 @@ node* inLast(node* head,char data){
     node* x;
     x = (struct node*)malloc(sizeof(struct node));
     node* p = head;
-    while(p->next != NULL){
+    while(p->next != head){
         p = p->next;
     }
     x->next = p->next;
@@ -22,7 +22,7 @@ node* inLast(node* head,char data){
 void delFirst(node* head){
     node* ptr1 = head;
     node* ptr2 = head->next;
-    if(ptr2 == NULL){
+    if(ptr2 == head){
         cout<<"Empty"<<endl;
     }
     else{
@@ -35,7 +35,7 @@ void delFirst(node* head){
 
 void display(node* head){
     node* p = head->next;
-    while(p){
+    while(p != head){
         cout<<p->data<<endl;
         p = p->next;
     }
@@ -44,7 +44,7 @@ void display(node* head){
 int main(){
     node* head;
     head = (node*)malloc(sizeof(node));
-    head->next = NULL;
+    head->next = head;
 
     int k=0;
     char data;
